@@ -1,4 +1,4 @@
-# Prueba Técnica Final: Data Governance Developer
+# Prueba Técnica: Data Governance Developer
 
 ## Introducción y Contexto del Problema 📝
 
@@ -145,7 +145,7 @@ Explica la relación de linaje principal entre `users`, `posts_questions` y `pos
 
 ## Entregables 📬
 
-Proporciona un enlace a un **repositorio de Git** (GitHub, GitLab, etc.) que contenga:
+Crea un **fork** de este repositorio que contenga:
 
 ### **Código y Configuración:**
 - ✅ Todos los artefactos, scripts, documentos que creaste
