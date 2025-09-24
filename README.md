@@ -93,7 +93,7 @@ Demuestra que los Aspect Types se han aplicado correctamente a las tablas en la 
 La tabla `users` contiene datos que deben ser protegidos. Tu tarea es implementar una **política de enmascaramiento**.
 
 #### **Definir la Política:**
-Usando las funcionalidades de "Policies" en Dataplex, crea una nueva regla de política de datos.
+Usando las funcionalidades de "Policies", crea una nueva regla de política de datos.
 
 #### **Configurar la Regla:**
 - **Recurso**: Aplica la política a las columnas `display_name` y `location` de la tabla `bigquery-public-data.stackoverflow.users`
