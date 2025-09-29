@@ -1,0 +1,25 @@
+tables:
+  - table_id: users
+    description: "Tabla maestra de usuarios. Contiene información personal identificable (PII) y debe ser tratada como sensible."
+    data_steward: "identity_management@deacero.com"
+    spec:
+      tags:
+        - PII_Direct
+        - User Data
+        - Sensitive
+
+  - table_id: posts_questions
+    description: "Contiene todas las preguntas creadas por los usuarios. El contenido es generado por el usuario."
+    data_steward: "knowledge_management@deacero.com"
+    spec:
+      tags:
+        - User Generated Content
+        - Knowledge Base
+
+  - table_id: posts_answers
+    description: "Contiene las respuestas a las preguntas. Vinculada a las preguntas y a los usuarios."
+    data_steward: "knowledge_management@deacero.com"
+    spec:
+      tags:
+        - User Generated Content
+        - Transactional Data
