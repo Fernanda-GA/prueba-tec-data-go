@@ -1,0 +1,17 @@
+steps:
+  # Paso 1: Construir la imagen Docker
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'gcr.io/$PROJECT_ID/dataplex-catalog:latest', '.']
+
+  # Paso 2: Subir la imagen al Container Registry
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/$PROJECT_ID/dataplex-catalog:latest']
+
+  # Paso 3: Ejecutar el script Python dentro de la imagen
+  - name: 'gcr.io/$PROJECT_ID/dataplex-catalog:latest'
+    entrypoint: 'python'
+    args: ['update_datacatalog.py', 'metadata.yaml']
+    env:
+      - 'GOOGLE_CLOUD_PROJECT=$PROJECT_ID'
+      - 'DATASET_ID=so_dataset_2'
+      - 'GOOGLE_APPLICATION_CREDENTIALS=/app/credentials.json'
