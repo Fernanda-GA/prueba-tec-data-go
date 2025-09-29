@@ -1,0 +1,22 @@
+# Usar Python 3.11 slim
+FROM python:3.11-slim
+
+# Directorio de trabajo dentro del contenedor
+WORKDIR /app
+
+# Copiar archivos del proyecto
+COPY requirements.txt .
+COPY update_datacatalog.py .
+COPY credentials.json .
+COPY metadata.yaml .
+
+# Definir variables de entorno necesarias
+ENV GOOGLE_CLOUD_PROJECT=governance-stackoverflow-demo
+ENV DATASET_ID=so_dataset_2
+ENV GOOGLE_APPLICATION_CREDENTIALS=/app/credentials.json
+
+# Instalar dependencias
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Comando por defecto al iniciar el contenedor
+CMD ["python", "update_datacatalog.py", "metadata.yaml"]
